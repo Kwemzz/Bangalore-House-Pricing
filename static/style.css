@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    color: rgb(54, 21, 21);
+}
+
+body{
+    background-image: url("bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    backdrop-filter: blur(6px);
+}
+
+.everything{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    max-width: 270px;
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h2{
+    padding-top: 25px;
+    padding-bottom: 8px;
+    font-size: 20px;
+}
+
+#ulsqft, #ullocation, .submit{
+    width: 250px;
+    height: 40px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.submit{
+    background-color: bisque;
+    margin-top: 35px;
+}
+
+#ulsqft, #ullocation, .submit:hover{
+    cursor: pointer;
+}
+
+.switch-field{
+    display: flex;
+    overflow: hidden;
+}
+
+.switch-field input{
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+}
+
+.switch-field label{
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    line-height: 1;
+    text-align: center;
+    padding: 8px 20.5px;
+    margin-right: -1px;
+    border: 1px solid black;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px rgba(255,255, 255, 0.5);
+}
+
+.switch-field label:hover{
+    cursor: pointer;
+    background-color: bisque;
+}
+
+.switch-field input:checked + label{
+    background-color: rgb(215, 29, 29);
+    color: white;
+}
+
+.switch-field input:checked + label:hover{
+    cursor: pointer;
+    background-color: bisque;
+    color: black;
+}
+
+.location option:hover{
+    background-color: rgb(215, 29, 29);
+    cursor: pointer;
+}
+
+.ulestimate{
+    width: 250px;
+    height: 40px;
+    border: 0;
+    border-radius: 5px;
+    background-color: rgb(215, 29, 29);
+    color: white;
+}
+

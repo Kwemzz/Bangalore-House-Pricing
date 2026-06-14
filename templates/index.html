@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banglore Home Price Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js"></script>
+</head>
+<body>
+    <div class="everything">
+        <form class="form" action="/predict" method="POST">
+            <h2>Area(Square Feet)</h2>
+            <input type="number" class="area" id="ulsqft" name="ulsqft" placeholder="1000" required>
+            
+            <h2>BHK</h2>
+            <div class="switch-field">
+                <input type="radio" name="ulbhk" id="radio-bhk-1" value="1">
+                <label for="radio-bhk-1">1</label>
+                <input type="radio" name="ulbhk" id="radio-bhk-2" value="2" checked/>
+                <label for="radio-bhk-2">2</label>
+                <input type="radio" name="ulbhk" id="radio-bhk-3" value="3">
+                <label for="radio-bhk-3">3</label>
+                <input type="radio" name="ulbhk" id="radio-bhk-4" value="4">
+                <label for="radio-bhk-4">4</label>
+                <input type="radio" name="ulbhk" id="radio-bhk-5" value="5">
+                <label for="radio-bhk-5">5</label>
+            </div>
+
+            <h2>Bath</h2>
+            <div class="switch-field">
+                <input type="radio" name="ulbath" id="radio-bath-1" value="1">
+                <label for="radio-bath-1">1</label>
+                <input type="radio" name="ulbath" id="radio-bath-2" value="2" checked/>
+                <label for="radio-bath-2">2</label>
+                <input type="radio" name="ulbath" id="radio-bath-3" value="3">
+                <label for="radio-bath-3">3</label>
+                <input type="radio" name="ulbath" id="radio-bath-4" value="4">
+                <label for="radio-bath-4">4</label>
+                <input type="radio" name="ulbath" id="radio-bath-5" value="5">
+                <label for="radio-bath-5">5</label>
+            </div>
+
+            <h2>Location</h2>
+            <div>
+                <select class="location" id="ullocation" name="ullocation" required>
+                    <option value="" disabled="disabled" selected="selected">Choose a location</option>
+                    {% for loc in locations %}
+                        <option value="{{ loc }}">{{ loc }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button class="submit" type="submit">Estimate Price</button>
+        </form>
+
+        <div class="ulestimate" id="result" style="display: flex; align-items: center; justify-content: center; text-align: center; ">
+            <h2 style="color: white; font-size: 18px;">
+                {% if prediction_text %}
+                    {{ prediction_text }}
+                {% endif %}
+            </h2>
+        </div>
+    </div>
+</body>
+</html>
